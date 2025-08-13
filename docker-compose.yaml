@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: 
+      context: ./front-end
+    image: clm-frontend:latest
+    container_name: clm-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./front-end/.env
+    restart: unless-stopped
